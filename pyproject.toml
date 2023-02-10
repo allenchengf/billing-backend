@@ -7,8 +7,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-djangorestframework-jwt = "^1.11.0"
 djangorestframework = "^3.14.0"
+drf-jwt = "^1.19.2"
 
 
 [build-system]
