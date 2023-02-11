@@ -1,8 +1,9 @@
-from django.urls import re_path
+from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
 from . import views
 
 urlpatterns = [
-    re_path(r'^customers/$', views.customer_list),]
+    path('customers/', views.CustomersView.as_view(), name="customers"),
+]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
