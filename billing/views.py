@@ -3,9 +3,15 @@ from .models import Customer
 from .serializers import CustomerSerializer
 from django.http import JsonResponse
 from django.db import transaction
+from rest_framework import status
+from rest_framework import mixins
+from rest_framework import generics
 
 
-class CustomersView(GenericAPIView):
+class CustomersView(mixins.RetrieveModelMixin,
+                    mixins.UpdateModelMixin,
+                    mixins.DestroyModelMixin,
+                    generics.GenericAPIView):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
 
@@ -27,3 +33,8 @@ class CustomersView(GenericAPIView):
             data = {'error': str(e)}
         return JsonResponse(data)
 
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
+
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)
