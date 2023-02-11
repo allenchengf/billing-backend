@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'billing'
 ]
 
 MIDDLEWARE = [
@@ -121,3 +123,14 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',   # 数据库引擎
+        'NAME': 'billing',         # 数据库名，Django不会帮你创建，需要自己进入数据库创建。
+        'USER': 'root',       # 设置的数据库用户名
+        'PASSWORD': 'root',   # 设置的密码
+        'HOST': 'localhost',    # 本地主机或数据库服务器的ip
+        'PORT': '3306',         # 数据库使用的端口
+    }
+}
