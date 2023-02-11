@@ -11,10 +11,10 @@ from . import views
 #     re_path(r'^customers/(?P<pk>[0-9]+)$', views.CustomersView.as_view()),]
 
 urlpatterns = [
-    # re_path(r'^articles/$', views.article_list),
-    # re_path(r'^articles/(?P<pk>[0-9]+)$', views.article_detail),
     re_path(r'^customers/$', views.CustomersView.as_view()),
     re_path(r'^customers/(?P<pk>[0-9]+)$', views.CustomersView.as_view()),
+    re_path(r'^subscriptions/$', views.SubscriptionsView.as_view()),
+    re_path(r'^subscriptions/(?P<pk>[0-9]+)$', views.SubscriptionsView.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
