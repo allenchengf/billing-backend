@@ -12,6 +12,7 @@ drf-jwt = "^1.19.2"
 django = "^4.1.6"
 mysqlclient = "^2.1.1"
 django-redis = "^5.2.0"
+redis = "^4.5.1"
 
 
 [build-system]
