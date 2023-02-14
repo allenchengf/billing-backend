@@ -150,3 +150,6 @@ JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
     'JWT_ALLOW_REFRESH': True,
 }
+
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
