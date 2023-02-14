@@ -85,4 +85,8 @@ class SensorsView(generics.GenericAPIView):
         data = redis_instance.get('sensors_menu')
         return Response(json.loads(data))
 
+class ChannelsView(generics.GenericAPIView):
+    def get(self, request, *args, **krgs):
+        data = redis_instance.get('channels_menu')
+        return Response(json.loads(data))
 
